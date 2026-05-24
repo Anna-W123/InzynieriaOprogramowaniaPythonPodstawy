@@ -29,27 +29,26 @@ def verify_pesel(pesel: str) -> int:
         int: 1 jeśli numer jest poprawny, 0 jeśli nie.
     """
 
-    pesel = input("Podaj PESEL: ")
+pesel = input("Podaj PESEL: ")
 
-    weryfikacja = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]
+weryfikacja = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3]
 
-    suma = 0
+suma = 0
 
-    for i in range(10):
+for i in range(10):
 
-    	suma = suma + int(pesel[i]) * weryfikacja[i]
+    suma = suma + int(pesel[i]) * weryfikacja[i]
 
-    kontrolna = 10 - (suma % 10)
+kontrolna = 10 - (suma % 10)
 
-    if kontrolna == 10:
+if kontrolna == 10:
     kontrolna = 0
 
-    if kontrolna == int(pesel[10]):
+if kontrolna == int(pesel[10]):
 
-    	print(1)
-    else:
-   	 print(0)
-
+    print(1)
+else:
+   	print(0)
     ### return 0 - powinno być zmienione i zwrócić prawdziwy wynik (zgodny z oczekiwaniami)
     return 0
 
